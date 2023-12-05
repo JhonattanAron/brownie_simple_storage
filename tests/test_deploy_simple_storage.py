@@ -1,4 +1,4 @@
-from brownie import accounts , SimpleStorage
+from brownie import accounts , SimpleStorage , network
 
 def test_deploy():
     # Arrage -> Organizar o arreglar
@@ -9,6 +9,12 @@ def test_deploy():
     expected = 0
     # Assert -> Comprobar que a ido bien
     assert starting_value == expected
+
+def get_account():
+    if network.show_active() == "development":
+        return accounts[0]
+    else:
+        return accounts.load("aron-account")
 
 
 def test_updating_storage():
