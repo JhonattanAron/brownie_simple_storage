@@ -11,6 +11,5 @@ def deploy_simple_storage():
     updated_store_value = simple_storage.retrieve()
     print(updated_store_value)
 
-
 def main():
     deploy_simple_storage()
